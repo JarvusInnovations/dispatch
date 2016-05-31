@@ -1,0 +1,71 @@
+@import 'theme/includes';
+
+.saved_filters li {
+  position: relative;
+  margin-bottom: $rhythm * 5;
+}
+
+.saved_filter_view {
+  display: block;
+  width: 100%;
+  position: relative;
+  border: 1px solid $gray;
+  border-radius: $radius;
+  box-shadow: 0 1px 0 rgba(#000,0.06);
+  padding: $rhythm ($rhythm * 2) $rhythm ($rhythm * 8);
+  transition: background-color 0.15s ease-out;
+
+  &:hover,
+  &:focus,
+  &:active  {
+    text-decoration: none;
+    outline: 0;
+  }
+  &:hover,
+  &:focus {
+    background: $lighterGray;
+  }
+
+  &:before {
+    position: absolute;
+    font-family: 'FontAwesome';
+    content: '\f002';
+    color: $darkGray;
+    font-size: $rhythm * 4;
+    top: $rhythm;
+    left: $rhythm * 1.5;
+  }
+  span,
+  em {
+    display: block;
+    @include font_smoothing;
+  }
+  span {
+    font-size: 1.2rem;
+    color: $darkestGray;
+  }
+  em {
+    font-style: normal;
+    font-size: $fontSmall;
+    color: $darkerGray;
+  }
+}
+
+.saved_filter_actions {
+  position: absolute;
+  font-size: $fontSmall;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: $rhythm;
+}
+
+@media screen and (min-width: $lapWidth) {
+  .saved_filter_view {
+    width: 80%;
+  }
+  .saved_filter_actions {
+    top: 0;
+    margin-top: 0;
+  }
+}

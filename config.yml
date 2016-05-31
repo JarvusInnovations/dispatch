@@ -1,0 +1,74 @@
+# Any key that takes a string as its value can be overridden by
+# setting an environment variable of the same name.
+
+# What is the site called? What government entity is it being used by?
+# These keys will be used in views and outgoing emails.
+SITE_TITLE: Dispatch
+AGENCY_NAME: The City of Philadelphia
+
+# This name must correspond to a subdirectory in the themes/ directory
+THEME: phl-core
+
+FOOTER_LINKS:
+- text: Contact us
+#href: 'mailto:support@dobt.co'
+
+# Each entry must correspond to a template in views/static/#{path}.html.erb
+STATIC_PAGES:
+- name: About
+path: about
+
+# Valid options: file, aws
+#UPLOAD_STORAGE: file
+
+# AWS requires these settings:
+# AWS_KEY:
+# AWS_SECRET:
+# AWS_REGION:
+# AWS_BUCKET:
+
+# Where do notifications get sent from?
+#EMAIL_NOTIFICATION_FROM_ADDRESS: noreply@dobt.co
+
+# How long before the question deadline should we remind subscribers?
+QUESTION_DEADLINE_REMINDER_HOURS: 48
+
+# How long before the submission deadline should we remind subscribers?
+SUBMISSION_DEADLINE_REMINDER_HOURS: 72
+
+# Users with an email address that ends in one of these domains will
+# automatically be granted `staff` permission
+STAFF_DOMAINS:
+- phila.gov
+
+# *Highly* recommended in production
+SSL: false
+
+# The domain of your site, e.g. "www.dispatch.gov". Don't include the `https`
+BASE_DOMAIN: localhost:3000
+
+# Rails cookie-signing secrets. You cangGenerate values with `rake secret`
+# for deployed environments.
+#SECRET_TOKEN: this is an insecure value that must...
+#SECRET_KEY_BASE: ...be changed in production!
+
+# Use a CDN
+# ASSET_HOST:
+
+# In staging, redirect all email that does not match the address whitelist
+# to this user. Used for preventing users from receiving emails sent
+# by a staging server.
+#
+# REDIRECT_EMAIL_TO: noreply@dobt.co
+
+# SMTP configuration for sending email in deployed environments. This must be
+# configured in staging and production!
+#
+# SMTP_ADDRESS:
+# SMTP_PORT:
+# SMTP_STARTTLS_AUTO:
+# SMTP_USER:
+# SMTP_PASSWORD:
+# SMTP_AUTHENTICATION:
+# SMTP_DOMAIN:
+# SMTP_SSL:

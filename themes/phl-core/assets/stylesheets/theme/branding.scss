@@ -1,0 +1,15 @@
+$navBackground: #2176d2;
+
+$primaryColor: #2176d2;
+$secondaryColor: #58c04d;
+
+$fontFamilyDisplay: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+$fontFamilyDefault: 'Open Sans', 'HelveticaNeue-Light', Helvetica, Arial, sans-serif;
+$fontFamilyMonospace: 'Monaco', 'Lucida Console', monospace;
+
+// Smooth text looks best against our $primaryColor
+
+.navbar a,
+.button.primary {
+  @include font_smoothing;
+}
