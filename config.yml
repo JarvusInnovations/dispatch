@@ -42,10 +42,10 @@ STAFF_DOMAINS:
 - phila.gov
 
 # *Highly* recommended in production
-SSL: false
+#SSL: false
 
 # The domain of your site, e.g. "www.dispatch.gov". Don't include the `https`
-BASE_DOMAIN: localhost:3000
+#BASE_DOMAIN: localhost:3000
 
 # Rails cookie-signing secrets. You cangGenerate values with `rake secret`
 # for deployed environments.
