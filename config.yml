@@ -11,12 +11,12 @@ THEME: phl-core
 
 FOOTER_LINKS:
 - text: Contact us
-#href: 'mailto:support@dobt.co'
+  href: 'mailto:support@dobt.co'
 
 # Each entry must correspond to a template in views/static/#{path}.html.erb
 STATIC_PAGES:
 - name: About
-path: about
+  path: about
 
 # Valid options: file, aws
 #UPLOAD_STORAGE: file
@@ -45,12 +45,12 @@ STAFF_DOMAINS:
 #SSL: false
 
 # The domain of your site, e.g. "www.dispatch.gov". Don't include the `https`
-#BASE_DOMAIN: localhost:3000
+BASE_DOMAIN: localhost:3000
 
 # Rails cookie-signing secrets. You cangGenerate values with `rake secret`
 # for deployed environments.
-#SECRET_TOKEN: this is an insecure value that must...
-#SECRET_KEY_BASE: ...be changed in production!
+SECRET_TOKEN: this is an insecure value that must...
+SECRET_KEY_BASE: ...be changed in production!
 
 # Use a CDN
 # ASSET_HOST:
