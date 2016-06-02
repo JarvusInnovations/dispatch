@@ -1,0 +1,28 @@
+<% content_for(:page_title, @opportunity.title) %>
+
+<% if !@opportunity.posted? %>
+  <%= render('admin_status') %>
+<% end %>
+
+<div class='page_header page_header_action'>
+  <h2><%= @opportunity.title %></h2>
+
+  <div class='page_header_action_button'>
+    <% if @opportunity.posted? %>
+      <%= render('subscribe_button') %>
+    <% end %>
+  </div>
+</div>
+
+<div class='grid'>
+  <div class='item lap_seven_columns desk_eight_columns'>
+    <%= render('description') %>
+    <%= render('attachments') %>
+    <%= render('questions') if @opportunity.enable_questions? %>
+  </div>
+  <div class='item lap_five_columns desk_four_columns'>
+    <%= render('timeline') %>
+    <%= render('vendor_actions') %>
+    <%= render('admin_links') %>
+  </div>
+</div>

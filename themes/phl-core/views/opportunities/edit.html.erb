@@ -1,0 +1,49 @@
+<% content_for(:page_key, 'opportunities-edit') %>
+<% content_for(:page_title, @opportunity.title) %>
+<% content_for(:main_container_class, 'container_small') %>
+
+<div class='page_header'>
+  <h2 data-toggle-opportunity-rename>
+    <%= @opportunity.title %>
+    <a class='button subtle mini' title='<%= t('rename') %>' data-toggle-visible='[data-toggle-opportunity-rename]'>
+      <i class='fa fa-pencil'></i>
+    </a>
+  </h2>
+
+  <%= simple_form_for @opportunity, html: { class: 'opportunity_rename_form', style: 'display:none', 'data-toggle-opportunity-rename' => true } do |f| %>
+    <input type='hidden' name='rename' value='1' />
+    <div class='opportunity_rename_input'>
+      <%= f.input_field :title %>
+    </div>
+    <div class='opportunity_rename_button'>
+      <%= f.button :button, t('rename') %>
+    </div>
+  <% end %>
+
+  <a class='button primary icon_r' href='<%= opportunity_path %>' data-toggle-opportunity-rename>
+    <% if @opportunity.posted? %>
+     <%= t('view') %>
+    <% else %>
+      <%= t('preview') %>
+    <% end %>
+    <i>&rarr;</i>
+  </a>
+</div>
+
+<ul class='tabs'>
+  <% edit_opportunity_steps.each do |x| %>
+    <li<% if params[:step] == x %> class='active'<% end %>>
+      <a href='<%= edit_opportunity_path(step: x) %>'><%= t("edit_opportunity_steps.#{x}.title") %></a>
+    </li>
+  <% end %>
+</ul>
+
+<%= simple_form_for @opportunity, wrapper: :horizontal do |f| %>
+  <input type='hidden' name='step' value='<%= params[:step] %>' />
+
+  <%= render partial: "opportunities/edit/#{params[:step]}", locals: { f: f } %>
+
+  <div class='form_actions horizontal'>
+    <%= f.button :button, "#{t('save_and_continue')} &rarr;".html_safe, class: 'primary' %>
+  </div>
+<% end %>

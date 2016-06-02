@@ -6,6 +6,7 @@
   <%= stylesheet_link_tag('application', media: 'all') %>
   <%= render 'webfonts' %>
   <%= yield(:extra_css) %>
+  <link rel='stylesheet' id='phila-gov-patterns' href="https://cityofphiladelphia.github.io/patterns/dist/1.1.5/css/patterns.css">
   <meta name='viewport' content='width=device-width, initial-scale=1.0' />
   <link rel='alternate' type='application/rss+xml' title='RSS feed' href='<%= feed_opportunities_path(format: :xml) %>' />
   <%= csrf_meta_tags %>
@@ -13,10 +14,23 @@
     <script src='//code.jquery.com/jquery-2.2.3.min.js'></script>
   <% end %>
   <script>window.jQuery || document.write('<script src="/non_digest_assets/jquery.js"><\/script>')</script>
+  <script src='https://cityofphiladelphia.github.io/patterns/dist/1.4.0/js/patterns.min.js?ver=1'></script>
 </head>
+
+<!-- Google Tag Manager [phila.gov] -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC6CR2"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script type="text/javascript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MC6CR2');</script>
+<!-- End Google Tag Manager -->
 
 <body class="<%= yield(:page_key) %>" data-page-key="<%= yield(:page_key) %>">
   <%= render('navbar') %>
+
+
   <%= render('flashes') %>
   <%= render('inner_layout') %>
   <%= render('footer') %>
