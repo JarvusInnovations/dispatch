@@ -24,6 +24,8 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :letter_opener
 
   Delayed::Worker.delay_jobs = false
+
+  config.SITE_TITLE = 'Open Vendor Philly'
 end
 
 require_relative '_shared'
