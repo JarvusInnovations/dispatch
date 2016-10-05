@@ -34,9 +34,3 @@ test:
       else
         script/cibuild
       fi
-
-deployment:
-  demo:
-    branch: master
-    heroku:
-      appname: dispatch-demo
