@@ -2,11 +2,9 @@ source 'https://rubygems.org'
 
 ruby '2.3.1'
 
-gem 'rails'
+gem 'rails', '4.2.7.1'
 
-# Derp: https://github.com/thoughtbot/administrate/pull/560
-gem 'administrate', '0.2.2'
-
+gem 'administrate'
 gem 'autoprefixer-rails',
     github: 'ajb/autoprefixer-rails',
     branch: 'bundle-process'
@@ -26,6 +24,10 @@ gem 'pg'
 gem 'pg_search'
 gem 'pundit'
 gem 'premailer-rails'
+
+# Locked: https://github.com/premailer/premailer/issues/315
+gem 'css_parser', '1.4.2'
+
 gem 'rails_oneline_logging'
 gem 'rinku'
 gem 'sassc-rails'
@@ -69,10 +71,7 @@ end
 group :test do
   gem 'brakeman', require: false
   gem 'capybara'
-
-  # https://github.com/thoughtbot/capybara-webkit/issues/909
-  gem 'capybara-webkit', '1.10.1'
-
+  gem 'capybara-webkit'
   gem 'codeclimate-test-reporter', require: false
   gem 'database_cleaner'
   gem 'rspec-its'
@@ -83,7 +82,7 @@ group :development, :test do
   gem 'i18n-tasks'
   gem 'pry'
   gem 'rspec-rails'
-  gem 'rubocop', require: false
+  gem 'rubocop', '~> 0.41.1', require: false
 end
 
 group :production do
