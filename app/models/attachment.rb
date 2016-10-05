@@ -12,6 +12,7 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  text_content    :text
+#  name            :string
 #
 # Indexes
 #
@@ -25,4 +26,8 @@ class Attachment < ActiveRecord::Base
 
   mount_uploader :upload, AttachmentUploader
   validates :upload, presence: true
+
+   def to_s
+      name || upload.raw_filename
+   end
 end
