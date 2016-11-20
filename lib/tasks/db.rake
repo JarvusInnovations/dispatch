@@ -10,6 +10,14 @@ namespace :db do
         confirmed_at: Time.now
       )
 
+      user = FactoryGirl.create(
+        :user,
+        name: 'Open Vendor Admin',
+        email: 'pov_admin@dispatch.gov',
+        permission_level: 'admin',
+        confirmed_at: Time.now
+      )
+
       departments = Array(3).map { FactoryGirl.create(:department) }
 
       categories = Array(10).map { FactoryGirl.create(:category) }
