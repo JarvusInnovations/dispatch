@@ -48,6 +48,7 @@ namespace :pov do
             end
 
             o.created_by_user = u
+            o.approved_at = DateTime.now
             o.save!
         end
     end
