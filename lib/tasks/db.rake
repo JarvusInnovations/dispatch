@@ -13,7 +13,7 @@ namespace :db do
       user = FactoryGirl.create(
         :user,
         name: 'Open Vendor Admin',
-        email: 'pov_admin@dispatch.gov',
+        email: 'ov_admin@dispatch.gov',
         permission_level: 'admin',
         confirmed_at: Time.now
       )
