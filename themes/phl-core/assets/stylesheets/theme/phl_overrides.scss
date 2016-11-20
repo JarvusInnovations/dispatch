@@ -1,0 +1,92 @@
+$radius: 0px;
+
+.navbar {
+	min-height: 6.5rem;
+	padding-top: 1.2rem;
+	padding-bottom: 1.2rem;
+}
+.container {
+	width: 100%;
+}
+
+div.navbar_header > a.navbar_brand {
+	color: white;
+	font-weight: 400;	
+	margin-top: 2%;
+	margin-left: 2rem;
+	border-left: 1px solid white
+}
+
+.navbar_brand {
+	padding-left: 20px;
+}
+
+.top-bar, .top-bar ul {
+	background: #96c9ff!important;
+	padding: 0px!important;
+}
+
+.opportunity, div.navbar_content.navbar_content_primary > ul, 
+div.navbar_content.navbar_content_secondary > ul, 
+div.item.lap_five_columns.desk_four_columns > ul > li {
+	list-style-type: none;
+}
+body > nav > div > div.navbar_content_wrapper > div.navbar_content.navbar_content_secondary > a {
+	margin: 0.85em 1em;
+}
+
+.search_result_count {
+	background: none;
+}
+
+.navbar_badge {
+	background: #f99300;
+}
+
+.page_header.page_header_action {
+	border-bottom: 10px solid #2176d2;
+	margin-bottom: 1.12286rem;
+	padding-bottom: 0px;
+}
+
+.page_header.page_header_action h2 {
+	margin-bottom: 0px;
+}
+
+.page_header_action_button {
+	background: none;
+}
+
+.button.primary.icon_l {
+	margin-bottom: 25px;
+}
+
+.button.secondary {
+	background-color: #58c04d!important;
+}
+
+div.page_header.page_header_action > div > a > i {
+	color: white;
+}
+
+.button i.fa {
+	color: white;
+}
+
+div.navbar_content.navbar_content_primary > ul > li > a {
+	//border-radius: 0;
+}
+
+table > thead > tr > th > a:link {
+	color: white;
+}
+
+body > nav > div > div > a > img {
+	max-width: 14%;
+	float: left;
+}
+
+
+
+
+

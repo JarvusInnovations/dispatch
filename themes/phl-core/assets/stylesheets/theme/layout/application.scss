@@ -1,0 +1,43 @@
+@import 'theme/includes';
+
+.container {
+  @include container;
+
+  &.container_small {
+    max-width: 50rem;
+  }
+
+  &.container_tiny {
+    max-width: 35rem;
+  }
+}
+
+.main_container {
+  padding-top: $rhythm * 3;
+}
+
+.opportunity_section {
+  margin-bottom: $rhythm * 4;
+
+  form {
+    max-width: 36rem;
+  }
+}
+
+.page_subheader_simple {
+  margin-top: $lineHeight;
+  h3 {
+    text-align: center;
+    float: none;
+    display: block;
+  }
+}
+
+.footer {
+  margin-top: $lineHeight * 2;
+}
+
+th a {
+  color: $darkerGray;
+  white-space: nowrap;
+}

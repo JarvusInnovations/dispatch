@@ -1,0 +1,12 @@
+<% content_for(:page_key, 'opportunities-new') %>
+<% content_for(:page_title, t('post_an_opportunity')) %>
+<% content_for(:main_container_class, 'container_tiny') %>
+
+<div class='page_header page_header_simple'>
+  <h2><%= t('.whats_the_title') %></h2>
+</div>
+
+<%= simple_form_for @opportunity do |f| %>
+  <%= f.input :title, label: false, input_html: { class: 'large', 'aria-label' => t('.whats_the_title') } %>
+  <%= f.button :button, t('get_started'), class: 'primary' %>
+<% end %>

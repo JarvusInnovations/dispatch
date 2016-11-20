@@ -1,0 +1,17 @@
+<a class='attachment_thumb' href='<%= attachment.upload.download_url %>'>
+  <% if attachment.has_thumbnail? %>
+    <span class='attachment_thumb_img'>
+      <img src='<%= attachment.upload.thumb.url %>' />
+    </span>
+  <% else %>
+    <span class='attachment_thumb_icon'>
+      <i class='fa fa-file-o fa-4x'></i>
+      <b><%= attachment.upload.friendly_file_type %></b>
+    </span>
+  <% end %>
+
+  <span class='attachment_thumb_body'>
+    <span class='attachment_thumb_name'><%= attachment.upload.raw_filename %></span>
+    <span class='attachment_thumb_size'><%= number_to_human_size(attachment.file_size_bytes)%></span>
+  </span>
+</a>

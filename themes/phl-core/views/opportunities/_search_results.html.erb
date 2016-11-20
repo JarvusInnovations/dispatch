@@ -1,0 +1,51 @@
+<table class='opportunities_table'>
+  <thead>
+    <tr>
+      <th><%= sortable_table_header @opportunities, 'title', t('title') %></th>
+      <th><%= sortable_table_header @opportunities, 'department', t('department') %></th>
+      <th><%= sortable_table_header @opportunities, 'submissions_close_at', t('deadline') %></th>
+    </tr>
+  </thead>
+  <% if @opportunities.present? %>
+    <% @opportunities.each do |opportunity| %>
+      <tbody class='opportunities_table_item'>
+        <tr>
+          <td>
+            <a href='<%= opportunity_path(opportunity) %>'><%= opportunity.title %></a>
+          </td>
+          <td>
+            <% if opportunity.department %>
+              <%= opportunity.department.name %>
+            <% else %>
+              <span class='none'><%= t('none') %></span>
+            <% end %>
+          </td>
+          <td>
+            <% if opportunity.submissions_close_at %>
+              <%= long_timestamp(opportunity.submissions_close_at) %>
+            <% else %>
+              <span class='none'><%= t('none') %></span>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <td colspan='3'>
+            <% if opportunity.description.present? %>
+              <%= truncate(strip_tags(opportunity.description), length: 250, escape: false) %>
+            <% else %>
+              <div class='none'><%= t('no_description') %></div>
+            <% end %>
+          </td>
+        </tr>
+      </tbody>
+    <% end %>
+  <% else %>
+    <tbody>
+      <tr>
+        <td colspan='3'><%= t('no_results') %></td>
+      </td>
+    </tbody>
+  <% end %>
+</table>
+
+<%= paginate @opportunities, pagination_class: 'pagination_centered' %>

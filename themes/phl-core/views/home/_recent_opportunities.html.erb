@@ -1,0 +1,17 @@
+<% if @recent_opportunities.present? %>
+  <div class='recent_opps'>
+    <h2><%= t('.title') %></h2>
+    <ul>
+      <% @recent_opportunities.each do |opportunity| %>
+        <li class='opportunity'>
+          <a href='<%= opportunity_path(opportunity) %>'>
+            <span><%= opportunity.title %></span>
+            <em><%= relative_timestamp(opportunity.posted_at) %></em>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+
+     <p class="recent_opps_more"><a href='<%= opportunities_path %>' class='button_uppercase'><%= t('.see_more') %></a></p>
+   </div>
+<% end %>

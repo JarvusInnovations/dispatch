@@ -1,0 +1,42 @@
+/* line 3, /Users/lancona/Documents/Github/CityofPhiladelphia/dispatch/themes/phl-core/assets/stylesheets/theme/phl_overrides.scss */
+.button {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  -webkit-appearance: none;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  border-radius: 0;
+  padding: 0.85em 1em;
+  margin: 0 0 1rem 0;
+  font-family: 'Montserrat', 'Tahoma', sans-serif;
+  font-weight: 400;
+  letter-spacing: .03rem;
+  background-color: #f99300;
+  color: #fff;
+  text-transform: uppercase; }
+
+/* line 27, /Users/lancona/Documents/Github/CityofPhiladelphia/dispatch/themes/phl-core/assets/stylesheets/theme/phl_overrides.scss */
+.h1 {
+  font-size: 2.14286rem; }
+
+/* line 31, /Users/lancona/Documents/Github/CityofPhiladelphia/dispatch/themes/phl-core/assets/stylesheets/theme/phl_overrides.scss */
+.search_result_count {
+  background: none; }
+
+/* line 35, /Users/lancona/Documents/Github/CityofPhiladelphia/dispatch/themes/phl-core/assets/stylesheets/theme/phl_overrides.scss */
+.navbar_badge {
+  background: #f99300; }
+
+/* line 43, /Users/lancona/Documents/Github/CityofPhiladelphia/dispatch/themes/phl-core/assets/stylesheets/theme/phl_overrides.scss */
+.page_header_action {
+  border-bottom: 10px solid #2176d2;
+  margin-bottom: 1.12286rem;
+  padding-bottom: 0px; }
+
+/* line 49, /Users/lancona/Documents/Github/CityofPhiladelphia/dispatch/themes/phl-core/assets/stylesheets/theme/phl_overrides.scss */
+.page_header_action_button {
+  background: none; }
+
+/*# sourceMappingURL=phl_overrides.css.map */

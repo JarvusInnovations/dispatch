@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+  <title><%= message.subject %></title>
+  <meta name='viewport' content='width=device-width' />
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+  <%= stylesheet_link_tag 'mailer', media: 'all' %>
+</head>
+<body>
+  <table class='body-wrap'>
+    <tr>
+      <td></td>
+      <td class='header_container'>
+        <h1 class='site_title'><%= DispatchConfiguration.site_title %></h1>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class='container'>
+        <div class='content'>
+          <table>
+            <tr>
+              <td>
+                <%= yield %>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </td>
+      <td></td>
+    </tr>
+  </table>
+
+  <table class='footer-wrap'>
+    <tr>
+      <td>
+      <td class='container'>
+        <div class='content'>
+          <table>
+            <tr>
+              <td align='center'>
+                <p>
+                  <%= t('mailer.footer', site_title: DispatchConfiguration.site_title) %>
+
+                  <% if @include_subscription_preferences_link %>
+                    <br />
+                    <a href='<%= edit_user_registration_url %>'><%= t('mailer.subscription_preferences') %></a>
+                  <% end %>
+                </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      <td></td>
+    </tr>
+  </table>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<%= f.input :department_id, as: :select, collection: Department.all, include_blank: t('choose_a_department') %>
+<%= f.input :description %>
+
+<%= f.input :publish_at, as: :datetime_picker %>
+<%= f.input :category_ids, as: :select, collection: Category.all, input_html: { multiple: true, 'data-no-styled-select' => true } %>
+
+<%= f.input :enable_questions, as: :boolean, label: false, inline_label: t('allow_vendors_to_ask_questions') %>
+
+<div data-show-if-checked='opportunity[enable_questions]' <% unless f.object.enable_questions? %>style='display:none'<% end %>>
+  <%= f.input :question_dates, wrapper_html: { class: 'date_range' } do %>
+    <%= f.input_field :questions_open_at, as: :datetime_picker %>
+    <span>and</span>
+    <%= f.input_field :questions_close_at, as: :datetime_picker %>
+  <% end %>
+</div>
+
+<%= f.input :attachments do %>
+  <ul class='js-attachments-list attachment_list'>
+    <% @opportunity.attachments.each do |attachment| %>
+      <%= render partial: 'edit_attachment', locals: { attachment: attachment } %>
+    <% end %>
+  </ul>
+
+  <div>
+    <label for='attachment_upload' class='button small'>Upload new attachment</label>
+    <input type='file' id='attachment_upload' style='position:fixed;left:-9999px;' data-ifu-options="<%= { action: opportunity_attachments_path(@opportunity), method: :post }.to_json %>" />
+  </div>
+<% end %>
