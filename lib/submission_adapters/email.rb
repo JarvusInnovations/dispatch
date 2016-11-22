@@ -3,10 +3,17 @@ module SubmissionAdapters
     self.select_text = 'Email'
 
     def submit_proposals_instructions
-      %(
-        Proposals for this opportunity should be sent by email to
-        <a href='mailto:#{submit_to_email}'>#{submit_to_name}</a>.
-      ).squish.html_safe
+
+      if @opportunity.contact_email == "admin@openvendorphilly.com"
+        %(
+          <a href='#{original_opportunity_url}' target='blank'>Click here to apply</a>.
+        ).squish.html_safe
+      else
+        %(
+          Proposals for this opportunity should be sent by email to
+          <a href='mailto:#{submit_to_email}'>#{submit_to_name}</a>.
+        ).squish.html_safe
+      end
     end
 
     def valid?
