@@ -72,3 +72,6 @@ SECRET_KEY_BASE: ...be changed in production!
 # SMTP_AUTHENTICATION:
 # SMTP_DOMAIN:
 # SMTP_SSL:
+
+
+DISABLE_DEPARTMENT_SEARCH: true
