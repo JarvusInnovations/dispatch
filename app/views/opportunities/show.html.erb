@@ -17,6 +17,10 @@
 <div class='grid'>
   <div class='item lap_seven_columns desk_eight_columns'>
     <%= render('description') %>
+    <% if @opportunity.original_url? %>
+      <a href="<%= @opportunity.original_url %>" target="blank">View Source</a>
+    <% end %>
+    test
     <%= render('attachments') %>
     <%= render('questions') if @opportunity.enable_questions? %>
   </div>

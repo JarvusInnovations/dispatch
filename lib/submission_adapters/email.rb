@@ -23,5 +23,9 @@ module SubmissionAdapters
     def submit_to_name
       @opportunity.submission_adapter_data['name']
     end
+
+    def original_opportunity_url
+      @opportunity.original_url
+    end
   end
 end

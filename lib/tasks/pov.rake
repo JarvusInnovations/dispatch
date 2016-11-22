@@ -15,6 +15,8 @@ namespace :pov do
             o = Opportunity.create
 
             o.description = opportunity['description']
+            o.original_url = opportunity['originalUrl']
+
             if opportunity['title'] != nil
                 o.title = opportunity['title']
             else
