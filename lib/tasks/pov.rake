@@ -9,7 +9,14 @@ namespace :pov do
         opportunity_file = File.read(path)
         opportunities = JSON.parse(opportunity_file)
 
-        u = User.find_by_email("ov_admin@dispatch.gov")
+        u = User.find_by_email("admin@openvendorphilly.com")
+        if u == nil
+            u = User.create
+            u.email = "admin@openvendorphilly.com"
+            u.name = 'Open Vendor Admin'
+            u.permission_level = 'admin'
+            u.confirmed_at = Time.now
+        end            
 
         opportunities.each do |opportunity|
             o = Opportunity.create
