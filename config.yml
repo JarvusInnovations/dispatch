@@ -3,7 +3,7 @@
 
 # What is the site called? What government entity is it being used by?
 # These keys will be used in views and outgoing emails.
-SITE_TITLE: Dispatch
+SITE_TITLE: Contracts Hub
 AGENCY_NAME: The City of Philadelphia
 
 # This name must correspond to a subdirectory in the themes/ directory
@@ -11,7 +11,7 @@ THEME: phl-core
 
 FOOTER_LINKS:
 - text: Contact us
-  href: 'mailto:support@dobt.co'
+  href: 'mailto:kclough@jarv.us'
 
 # Each entry must correspond to a template in views/static/#{path}.html.erb
 STATIC_PAGES:
