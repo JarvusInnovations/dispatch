@@ -34,19 +34,27 @@ namespace :pov do
                 o.submitted_at = Date.parse(opportunity['retrieveDate'])
             end
 
-            d = Department.find_by_name(opportunity['sourceDescription'])
+            s = Source.find_by_name(opportunity['sourceDescription'])
 
-            if d != nil
-                o.department = d
+            if s != nil
+                o.source = s
             elsif opportunity['sourceDescription'] != nil
-                d = Department.create
-                d.name = opportunity['sourceDescription']
-                d.save!
+                s = Source.create
+                s.name = opportunity['sourceDescription']
+                s.save!
 
-                o.department = d
+                o.source = s
             end
 
-            opportunity["attachedDocuments"].each do |attachment|
+            # Approve all non big ideas phl contracts
+            # Only allow questions on big ideas phl contracts
+            if opportunity['sourceDescription'] == '$32K and Under Small Contracts'
+                o.enable_questions = true
+            else
+                o.approved_at = DateTime.now
+            end
+
+            Array(opportunity["attachedDocuments"]).each do |attachment|
                 a = Attachment.create
                 
                 File.open(attachment['path'], 'r') do |f|
@@ -57,7 +65,6 @@ namespace :pov do
             end
 
             o.created_by_user = u
-            o.approved_at = DateTime.now
             o.save!
         end
     end
