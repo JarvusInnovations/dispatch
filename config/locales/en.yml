@@ -166,6 +166,7 @@ en:
       opportunity_filters:
         category_ids: 'And the categories:'
         department_id: 'From the department:'
+        source_id: 'From the source:'
         status: 'With the status:'
         text: 'I''m looking for:'
       user:

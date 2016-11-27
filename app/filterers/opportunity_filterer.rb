@@ -34,6 +34,10 @@ class OpportunityFilterer < Filterer::Base
     results.where(department_id: x)
   end
 
+  def param_source_id(x)
+    results.where(source_id: x)
+  end
+
   def defaults
     {
       status: 'open'

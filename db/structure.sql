@@ -244,7 +244,8 @@ CREATE TABLE opportunities (
     deleted_at timestamp without time zone,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
-    original_url character varying
+    original_url character varying,
+    source_id integer
 );
 
 
@@ -356,6 +357,37 @@ CREATE TABLE schema_migrations (
 
 
 --
+-- Name: sources; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE sources (
+    id integer NOT NULL,
+    name character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: sources_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE sources_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: sources_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE sources_id_seq OWNED BY sources.id;
+
+
+--
 -- Name: users; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -463,6 +495,13 @@ ALTER TABLE ONLY saved_searches ALTER COLUMN id SET DEFAULT nextval('saved_searc
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY sources ALTER COLUMN id SET DEFAULT nextval('sources_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regclass);
 
 
@@ -531,6 +570,14 @@ ALTER TABLE ONLY saved_searches
 
 
 --
+-- Name: sources_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY sources
+    ADD CONSTRAINT sources_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -578,6 +625,13 @@ CREATE INDEX index_audits_on_user_id_and_event ON audits USING btree (user_id, e
 --
 
 CREATE INDEX index_opportunities_on_department_id ON opportunities USING btree (department_id);
+
+
+--
+-- Name: index_opportunities_on_source_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_opportunities_on_source_id ON opportunities USING btree (source_id);
 
 
 --
@@ -655,6 +709,14 @@ ALTER TABLE ONLY opportunities
 
 
 --
+-- Name: fk_rails_cb889c337f; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY opportunities
+    ADD CONSTRAINT fk_rails_cb889c337f FOREIGN KEY (source_id) REFERENCES sources(id);
+
+
+--
 -- Name: fk_rails_e6d7b3fb68; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -701,4 +763,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160425151213');
 INSERT INTO schema_migrations (version) VALUES ('20161005212511');
 
 INSERT INTO schema_migrations (version) VALUES ('20161120213741');
+
+INSERT INTO schema_migrations (version) VALUES ('20161122213527');
 

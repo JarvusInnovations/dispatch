@@ -27,10 +27,12 @@
 #  created_at                        :datetime         not null
 #  updated_at                        :datetime         not null
 #  original_url                      :string
+#  source_id                         :integer
 #
 # Indexes
 #
 #  index_opportunities_on_department_id  (department_id)
+#  index_opportunities_on_source_id      (source_id)
 #
 
 class Opportunity < ActiveRecord::Base
@@ -44,6 +46,7 @@ class Opportunity < ActiveRecord::Base
 
   belongs_to :approved_by_user, class_name: 'User'
   belongs_to :department
+  belongs_to :source
 
   has_and_belongs_to_many :users
   has_and_belongs_to_many :categories

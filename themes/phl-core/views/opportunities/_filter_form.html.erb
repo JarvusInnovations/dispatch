@@ -18,6 +18,7 @@
       <% if !DispatchConfiguration.disable_department_search %>
         <%= f.input :department_id, required: false, as: :select, collection: Department.all, selected: @opportunities.filterer.params[:department_id], include_blank: true %>
       <% end %>
+      <%= f.input :source_id, required: false, as: :select, collection: Source.all, selected: @opportunities.filterer.params[:source_id], include_blank: true %>
       <%= f.button :button, t('filter'), class: 'primary' %>
     <% end %>
   </div>

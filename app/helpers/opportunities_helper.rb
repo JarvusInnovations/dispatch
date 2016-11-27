@@ -3,7 +3,8 @@ module OpportunitiesHelper
     @opportunities.filterer.params[:text].present? ||
     @opportunities.filterer.params[:status] != 'open' ||
     @opportunities.filterer.params[:category_ids].present? ||
-    @opportunities.filterer.params[:department_id].present?
+    @opportunities.filterer.params[:department_id].present? ||
+        @opportunities.filterer.params[:source_id].present?
   end
 
   def existing_saved_search

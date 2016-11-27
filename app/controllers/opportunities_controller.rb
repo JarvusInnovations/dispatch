@@ -151,6 +151,7 @@ class OpportunitiesController < ApplicationController
       :title,
       :description,
       :department_id,
+      :source_id,
       :contact_name,
       :contact_email,
       :contact_phone,
