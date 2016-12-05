@@ -177,6 +177,7 @@ en:
         title: RFP for Integrated Library System
       opportunity_filters:
         text: Enter a word or phrase
+  source: Source
   submit_proposal: Submit a proposal
   subscribed_success: You will be reminded of deadlines for this opportunity
   time:
