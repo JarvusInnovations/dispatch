@@ -10,8 +10,8 @@ AGENCY_NAME: The City of Philadelphia
 THEME: dvl-core
 
 FOOTER_LINKS:
-  - text: Contact us
-    href: 'mailto:kclough@jarv.us'
+  - text: Need Help?  Please refer to the FAQs or contact us
+    href: 'mailto:contractshub@phila.gov'
 
 # Each entry must correspond to a template in views/static/#{path}.html.erb
 STATIC_PAGES:
