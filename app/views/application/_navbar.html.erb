@@ -44,6 +44,7 @@
             <% if content_for(:page_key) != 'sign-in' %>
               <li>
                 <span>
+                  <a class='button small primary' href='<%= new_user_registration_path %>'><%= t('.sign_up') %></a>
                   <a class='button small primary' href='<%= new_user_session_path %>'><%= t('sign_in') %></a>
                 </span>
               </li>

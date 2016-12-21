@@ -54,12 +54,15 @@ en:
   get_started: Get started
   home:
     hero:
-      cta: Sign up today
-      hint: Browse new business opportunities, and get notified when new ones are posted.
-      hint_signed_in: New opportunities are being added every day!
-      title: Your one stop shop for all City of Philadelphia Contracts
+      cta: Browse Opportunities
+      sign_up: Sign Up
+      hint: Join the Contracts Hub community and learn about new contracting opportunities with the City of Philadelphia.
+      hint_signed_in: Join the Contracts Hub community and learn about new contracting opportunities with the City of Philadelphia.
+      title: We want to do business with you!
     recent_opportunities:
       see_more: See more…
+      background: Contracts Hub is an aggregate site that lists all contracting opportunities with the City of Philadelphia including contracts for professional services, public works, goods and services, and small contracts of $32K and under.  
+      cta: Subscribe today and get notified as new opportunities are posted.
       title: The latest opportunities
   keep_editing: Keep editing
   mailer:

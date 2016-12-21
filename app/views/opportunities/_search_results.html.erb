@@ -3,7 +3,6 @@
     <tr>
       <th><%= sortable_table_header @opportunities, 'title', t('title') %></th>
       <th><%= sortable_table_header @opportunities, 'department', t('department') %></th>
-      <th><%= sortable_table_header @opportunities, 'submissions_close_at', t('deadline') %></th>
     </tr>
   </thead>
   <% if @opportunities.present? %>

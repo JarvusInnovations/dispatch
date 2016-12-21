@@ -1,4 +1,8 @@
 <% if @recent_opportunities.present? %>
+  <div>
+    <p><%= t('.background') %></p>
+    <p><a href='<%= new_user_registration_path %>'><%= t('.cta') %></a></p>
+  </div>
   <div class='recent_opps'>
     <h2><%= t('.title') %></h2>
     <ul>
