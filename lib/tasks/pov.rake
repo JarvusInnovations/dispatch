@@ -20,7 +20,7 @@ namespace :pov do
 
         opportunities.each do |opportunity|
             if opportunity['status'] == nil || opportunity['status'] != 'Closed'
-                if opportunity['closeDate'] == nill || Date.parse(opportunity['closeDate']).future?
+                if opportunity['closeDate'] == nil || Date.parse(opportunity['closeDate']).future?
                     o = Opportunity.create
 
                     o.description = opportunity['description']
