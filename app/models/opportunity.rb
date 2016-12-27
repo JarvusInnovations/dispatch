@@ -102,8 +102,7 @@ class Opportunity < ActiveRecord::Base
     ],
     associated_against: {
       questions: [:question_text, :answer_text],
-      # Temporarily disable searching text content until optimizations can be made -- KBC
-      #attachments: [:upload, :text_content],
+      attachments: [:upload, :text_content],
       department: [:name]
     },
     using: {
