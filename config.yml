@@ -10,7 +10,7 @@ AGENCY_NAME: The City of Philadelphia
 THEME: phl-core
 
 FOOTER_LINKS:
-- text: Need Help?  Please refer to the FAQs or contact us
+- text: Need Help?  Contact us at contractshub@phila.gov
   href: 'mailto:contractshub@phila.gov'
 
 # Each entry must correspond to a template in views/static/#{path}.html.erb

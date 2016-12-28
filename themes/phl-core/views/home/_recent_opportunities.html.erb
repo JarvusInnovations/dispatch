@@ -5,7 +5,8 @@
   </div>
   <div class='recent_opps'>
     <h2><%= t('.title') %></h2>
-    <ul>
+    <!-- Inline style to correct issue with phl alpha pattern not looking great here - KBC -->
+    <ul style="margin-left: 0;padding-left: 0;">
       <% @recent_opportunities.each do |opportunity| %>
         <li class='opportunity'>
           <a href='<%= opportunity_path(opportunity) %>'>
