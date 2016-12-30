@@ -89,7 +89,7 @@ en:
     subscription_preferences: Change subscription preferences
   my_opportunities: Your posted opportunities
   name: Name
-  no_description: There is no description for this opportunity.
+  no_description: View opportunity for more information
   no_results: No results
   no_submission_adapter_warning: |-
     Make sure you explain how to submit proposals in your description!

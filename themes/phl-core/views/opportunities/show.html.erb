@@ -21,7 +21,11 @@
     <% end %>
     <% if @opportunity.original_url? %>
       <div class="opportunity_section">
-        <a href="<%= @opportunity.original_url %>" target="blank">View Opportunity from Original Source</a>
+        <div class="info_box_body">
+        <p>
+          For bids and professional services contracts, you must register for an account and apply for the opportunity through those respective sites
+        </p>
+        </div>
       </div>
     <% end %>
     <%= render('attachments') %>
