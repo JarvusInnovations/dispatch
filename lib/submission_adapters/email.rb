@@ -6,7 +6,7 @@ module SubmissionAdapters
 
       if @opportunity.contact_email == "admin@openvendorphilly.com"
         %(
-          <a href='#{original_opportunity_url}' target='blank'>Click here to apply</a>.
+          <a href='#{original_opportunity_url}' target='blank'>Click here for more information</a>.
         ).squish.html_safe
       else
         %(

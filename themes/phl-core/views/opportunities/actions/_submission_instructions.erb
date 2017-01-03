@@ -1,3 +1,6 @@
 <% if policy(@opportunity).submit? && @opportunity.submission_adapter.submit_proposals_instructions %>
-  <p class='microcopy submission_instructions'><%= @opportunity.submission_adapter.submit_proposals_instructions %></p>
+  <p class='microcopy submission_instructions'><%= @opportunity.submission_adapter.submit_proposals_instructions %>
+  	<br/>
+  	Bids and professional service contracts may require you to register for an account and apply for the opportunity through their respective sites.  You may access the full details around submission requirements for this opportunity by following the link above.
+  </p>
 <% end %>
