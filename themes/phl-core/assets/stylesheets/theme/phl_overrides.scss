@@ -77,8 +77,20 @@ div.navbar_content.navbar_content_primary > ul > li > a {
 	//border-radius: 0;
 }
 
+table {
+	word-break: inherit;
+}
+
 table > thead > tr > th > a:link {
 	color: white;
+}
+
+th:last-child, td:first-child {
+	padding: 0.75rem;
+}
+
+th:last-child, td:last-child {
+	padding: 0.75rem;
 }
 
 body > nav > div > div > a > img {
@@ -86,7 +98,23 @@ body > nav > div > div > a > img {
 	float: left;
 }
 
+.pagination ul li a, .pagination ul li:last-child span, .pagination ul li:first-child span {
+  width: auto;
+}
 
+.opportunities_table_item tr:first-child td {
+    padding-bottom: 0.75rem;
+}
 
+.info_disclaimer_text {
+	color: #426ca6;
+	font-size: 13.25px;
+}
 
+.submission_instructions {
+	font-size: 1rem;
+}
 
+.microcopy {
+	max-width: inherit;
+}
