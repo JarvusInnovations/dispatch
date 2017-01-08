@@ -12,7 +12,7 @@ class OpportunitiesController < ApplicationController
     skip_authorization
     @opportunities = Opportunity.posted.filter(
       opportunity_filter_params.merge(
-        sort: 'updated_at',
+        sort: 'approved_at',
         direction: 'desc'
       )
     )
