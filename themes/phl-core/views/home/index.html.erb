@@ -6,6 +6,9 @@
 <% end %>
 
 <div class='recent_opps'>
-  <%= render('recent_opportunities') %>
+  <div>
+    <p><%= t('background') %></p>
+    <p><a href='<%= new_user_registration_path %>'><%= t('cta') %></a></p>
+  </div>
   <%= render('about') %>
 </div>

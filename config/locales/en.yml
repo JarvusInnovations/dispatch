@@ -17,6 +17,7 @@ en:
   ask_question: Ask question
   asked_by_user_at_time: 'On %{timestamp}, %{user} asked:'
   attachments: Attachments
+  background: Contracts Hub is an aggregate site that lists all contracting opportunities with the City of Philadelphia including contracts for professional services, public works, goods and services, and small contracts of $32K and under.
   browse: Browse
   browse_opportunities: Browse opportunities
   business_name: Business name
@@ -27,6 +28,7 @@ en:
   confirm_delete_question: Are you sure you want to delete this question?
   contact: Contact
   created_by_user_at_time: Created by %{user} on %{timestamp}
+  cta: Subscribe today and get notified as new opportunities are posted.
   date_approved: Date Approved
   deadline: Deadline
   department: Department
@@ -59,7 +61,7 @@ en:
       sign_up: Sign Up
       hint: Join the Contracts Hub community and learn about new contracting opportunities with the City of Philadelphia.
       hint_signed_in: Welcome Back!
-      title: We want to do business with you!
+      title: We want to do business with you!    
     recent_opportunities:
       see_more: See more…
       background: Contracts Hub is an aggregate site that lists all contracting opportunities with the City of Philadelphia including contracts for professional services, public works, goods and services, and small contracts of $32K and under.  
