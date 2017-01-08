@@ -3,6 +3,7 @@
     <tr>
       <th><%= sortable_table_header @opportunities, 'title', t('title') %></th>
       <th><%= sortable_table_header @opportunities, 'source', t('source') %></th>
+      <th><%= sortable_table_header @opportunities, 'approved_at', t('date_approved') %></th>
     </tr>
   </thead>
   <% if @opportunities.present? %>
@@ -19,9 +20,12 @@
               <span class='none'><%= t('none') %></span>
             <% end %>
           </td>
+          <td>
+            <%= opportunity.approved_at.strftime("%m/%d/%Y") %>
+          </td>
         </tr>
         <tr>
-          <td colspan='2'>
+          <td colspan='3'>
             <% if opportunity.description.present? &&  opportunity.description != opportunity.title %>
               <%= truncate(strip_tags(opportunity.description), length: 250, escape: false) %>
             <% else %>
