@@ -11,7 +11,6 @@
       <input type='hidden' name='direction' value='<%= @opportunities.filterer.direction %>' />
 
       <%= f.input :text, required: false, input_html: { value: @opportunities.filterer.params[:text] } %>
-      <%= f.input :status, required: false, as: :select, collection: [['Open for submissions', 'open'], ['Closed for submissions', 'closed'], ['Open or closed', 'all']], include_blank: false, selected: @opportunities.filterer.params[:status], input_html: { 'data-width' => 'full' } %>
       <% if Category.all.length > 0 %>
         <%= f.input :category_ids, required: false, as: :select, collection: Category.all, selected: @opportunities.filterer.params[:category_ids], input_html: { multiple: true, 'data-no-styled-select' => true } %>
       <% end %>
