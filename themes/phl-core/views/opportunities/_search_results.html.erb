@@ -3,7 +3,7 @@
     <tr>
       <th><%= sortable_table_header @opportunities, 'title', t('title') %></th>
       <th><%= sortable_table_header @opportunities, 'source', t('source') %></th>
-      <th><%= sortable_table_header @opportunities, 'approved_at', t('date_approved') %></th>
+      <th><%= sortable_table_header @opportunities, 'original_publish_date', t('publish_date') %></th>
     </tr>
   </thead>
   <% if @opportunities.present? %>
@@ -21,7 +21,7 @@
             <% end %>
           </td>
           <td>
-            <%= opportunity.approved_at.strftime("%m/%d/%Y") %>
+            <%= opportunity.original_publish_date.strftime("%m/%d/%Y") %>
           </td>
         </tr>
         <tr>
@@ -38,7 +38,7 @@
   <% else %>
     <tbody>
       <tr>
-        <td colspan='2'><%= t('no_results') %></td>
+        <td colspan='3'><%= t('no_results') %></td>
       </td>
     </tbody>
   <% end %>

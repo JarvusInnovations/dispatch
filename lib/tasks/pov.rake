@@ -37,6 +37,10 @@ namespace :pov do
                         o.submitted_at = Date.parse(opportunity['retrieveDate'])
                     end
 
+                    if opportunity['publishDate'] != nil
+                        o.original_publish_date = Date.parse(opportunity['publishDate'])
+                    end
+
                     s = Source.find_by_name(opportunity['sourceDescription'])
 
                     if s != nil

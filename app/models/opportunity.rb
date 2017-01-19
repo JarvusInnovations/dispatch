@@ -28,6 +28,7 @@
 #  updated_at                        :datetime         not null
 #  original_url                      :string
 #  source_id                         :integer
+#  original_publish_date             :datetime
 #
 # Indexes
 #
@@ -54,6 +55,8 @@ class Opportunity < ActiveRecord::Base
   has_many :attachments, dependent: :destroy
 
   serialize :submission_adapter_data, Hash
+
+  default_scope { order(original_publish_date: :desc) }
 
   scope :not_approved, -> { where('approved_at IS NULL') }
   scope :approved, -> { where('approved_at IS NOT NULL') }

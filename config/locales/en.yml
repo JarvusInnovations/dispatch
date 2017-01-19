@@ -30,6 +30,7 @@ en:
   created_by_user_at_time: Created by %{user} on %{timestamp}
   cta: Subscribe today and get notified as new opportunities are posted.
   date_approved: Date Approved
+  publish_date: Publish Date
   deadline: Deadline
   department: Department
   destroy: Delete

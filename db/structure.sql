@@ -245,7 +245,8 @@ CREATE TABLE opportunities (
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
     original_url character varying,
-    source_id integer
+    source_id integer,
+    original_publish_date timestamp without time zone
 );
 
 
@@ -765,4 +766,6 @@ INSERT INTO schema_migrations (version) VALUES ('20161005212511');
 INSERT INTO schema_migrations (version) VALUES ('20161120213741');
 
 INSERT INTO schema_migrations (version) VALUES ('20161122213527');
+
+INSERT INTO schema_migrations (version) VALUES ('20170116233734');
 
