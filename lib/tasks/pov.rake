@@ -2,7 +2,8 @@ namespace :pov do
   require 'json'
 
   task :generate, :environment do
-    system "/Users/kevinclough/Projects/Jarvus/city-toolkit-hub/scraper/; node app-dispatch.js"
+    # TODO move paths to config - KBC 1/25/17
+    system "/home/kclough/phl-open-vendor/scraper/; node app-dispatch.js"
   end
 
   task :import, [:path] => :environment do |t, args|
