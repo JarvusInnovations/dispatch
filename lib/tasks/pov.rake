@@ -19,6 +19,13 @@ namespace :pov do
         end            
 
         opportunities.each do |opportunity|
+            s = Source.find_by_name(opportunity['sourceDescription'])
+
+            if s.present?
+                existing_opportunity = Opportunity.where("source_id = ? AND title = ? AND description = ?", s.id, opportunity['title'], opportunity['description'])
+                next if existing_opportunity.present?
+            end
+
             if opportunity['status'] == nil || opportunity['status'] != 'Closed'
                 closeDate = Date.parse(opportunity['closeDate']) rescue nil
                 if closeDate == nil || closeDate.future?
@@ -29,8 +36,6 @@ namespace :pov do
 
                     if opportunity['title'] != nil
                         o.title = opportunity['title']
-                    else
-                        o.title = opportunity['description']
                     end
 
                     if opportunity['retrieveDate'] != nil
@@ -39,9 +44,9 @@ namespace :pov do
 
                     if opportunity['publishDate'] != nil
                         o.original_publish_date = Date.parse(opportunity['publishDate'])
+                    else
+                        o.original_publish_date = DateTime.now
                     end
-
-                    s = Source.find_by_name(opportunity['sourceDescription'])
 
                     if s != nil
                         o.source = s
