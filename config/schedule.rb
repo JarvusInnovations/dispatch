@@ -29,6 +29,6 @@ end
 
 # TODO move paths to config - KBC 1/25/17
 every 1.day do
-	system "/Users/kevinclough/Projects/Jarvus/city-toolkit-hub/scraper/; node app-dispatch.js"
+	rake 'pov:generate'
 	rake 'pov:import[/Users/kevinclough/Projects/Jarvus/city-toolkit-hub/scraper/dispatch.json]'
 end
