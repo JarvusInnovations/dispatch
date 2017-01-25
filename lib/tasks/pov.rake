@@ -1,9 +1,17 @@
 namespace :pov do
   require 'json'
 
+  
+  task :update, :environment do
+    Rake::Task["pov:generate"].invoke
+    # Rake::Task["pov:import"].invoke("/Users/kevinclough/Projects/Jarvus/city-toolkit-hub/scraper/dispatch.json")
+    Rake::Task["pov:import"].invoke("/home/kclough/phl-open-vendor/scraper/dispatch.json")
+  end
+
   task :generate, :environment do
     # TODO move paths to config - KBC 1/25/17
-    system "/home/kclough/phl-open-vendor/scraper/; node app-dispatch.js"
+    # system "cd /Users/kevinclough/Projects/Jarvus/city-toolkit-hub/scraper; node app-dispatch.js"
+    system "cd /home/kclough/phl-open-vendor/scraper/; node app-dispatch.js"
   end
 
   task :import, [:path] => :environment do |t, args|

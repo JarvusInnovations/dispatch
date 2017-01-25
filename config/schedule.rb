@@ -29,6 +29,5 @@ end
 
 # TODO move paths to config - KBC 1/25/17
 every 1.day do
-	rake 'pov:generate'
-	rake 'pov:import[/home/kclough/phl-open-vendor/scraper/dispatch.json]'
+	rake 'pov:update'
 end
