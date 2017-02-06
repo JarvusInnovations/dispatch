@@ -35,7 +35,11 @@ namespace :pov do
             s = Source.find_by_name(opportunity['sourceDescription'])
 
             if s.present?
-                existing_opportunity = Opportunity.where("source_id = ? AND title = ? AND description = ?", s.id, opportunity['title'], opportunity['description'])
+                if opportunity["description"].nil?
+                   existing_opportunity = Opportunity.where("source_id = ? AND title = ? AND description IS NULL", s.id, opportunity['title'])
+                else
+                   existing_opportunity = Opportunity.where("source_id = ? AND title = ? AND description = ?", s.id, opportunity['title'], opportunity['description'])
+                end
                 next if existing_opportunity.present?
             end
 
