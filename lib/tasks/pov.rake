@@ -40,7 +40,28 @@ namespace :pov do
                 else
                    existing_opportunity = Opportunity.where("source_id = ? AND title = ? AND description = ?", s.id, opportunity['title'], opportunity['description'])
                 end
-                next if existing_opportunity.present?
+
+                if existing_opportunity.present?
+                    existing_opportunity = existing_opportunity.first
+                    existing_opportunity_attachments_count = existing_opportunity.attachments.length
+                    opportunity_attachments_count = opportunity["attachedDocuments"].length
+
+                    if existing_opportunity_attachments_count != opportunity_attachments_count
+                        existing_opportunity.attachments.delete_all
+
+                        Array(opportunity["attachedDocuments"]).each do |attachment|
+                            a = Attachment.create
+                            
+                            File.open(attachment['path'], 'r') do |f|
+                                a.upload = f
+                                a.name = attachment['text']
+                                a.opportunity_id = existing_opportunity.id
+                                a.save!
+                              end
+                        end
+                    end
+                    next
+                end
             end
 
             if opportunity['status'] == nil || opportunity['status'] != 'Closed'
