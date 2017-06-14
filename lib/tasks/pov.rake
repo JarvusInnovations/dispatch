@@ -44,6 +44,11 @@ namespace :pov do
                 if existing_opportunity.present?
                     existing_opportunity = existing_opportunity.first
                     existing_opportunity_attachments_count = existing_opportunity.attachments.length
+                    
+                    if opportunity["attachedDocuments"].nil?
+                        opportunity["attachedDocuments"] = []
+                    end
+
                     opportunity_attachments_count = opportunity["attachedDocuments"].length
 
                     if existing_opportunity_attachments_count != opportunity_attachments_count
